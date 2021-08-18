@@ -1,9 +1,9 @@
 version: v1.1.0
 steps:
   - id: build-hello-world
-    build: -t $Registry/sleeping-world:$ID -f Dockerfile .
+    build: -t $Registry/sleeping-world:$ID -f node.dockerfile .
     env:
-      - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver
+      - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver:20H2
       - NODEJS_VERSION=14.15.3
   #- id: push-hello-world
     #push: ["$Registry/$repo/hello-world:$ID"]
