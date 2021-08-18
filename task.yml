@@ -1,0 +1,17 @@
+version: v1.1.0
+
+# To run this: az acr run -f build-hello-world.yaml https://github.com/AzureCR/acr-tasks-sample.git
+
+
+
+alias:
+  src:
+    - ./env.yml
+steps:
+  - id: build-hello-world
+    build: -t $Registry/$repo/hello-world -f hello-world.dockerfile ./subDirectory
+    env:
+      - PARENT_IMAGE=$NODEJSPARENTIMAGE
+      - NODEJS_VERSION=$NODEJSVERSION
+  - id: push-hello-world
+    push: ["$Registry/hello-world:$ID"]
