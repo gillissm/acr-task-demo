@@ -4,7 +4,7 @@ alias:
     repo: sample-complex
 steps:
   - id: build-hello-world
-    build: -t $Registry/$repo/hello-world:$ID -f Dockerfile .
+    build: -t $Registry/$repo/hello-world -f Dockerfile .
     env:
       - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver
       - NODEJS_VERSION=14.15.3
