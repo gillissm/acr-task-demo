@@ -1,9 +1,9 @@
 version: v1.1.0
 alias:
   values:
-    repo: 'sample-complex'
-    NODEJSPARENTIMAGE: 'mcr.microsoft.com/windows/nanoserver:20H2'
-    NODEJSVERSION: '14.15.3'
+    repo: sample-complex
+    NODEJSPARENTIMAGE: mcr.microsoft.com/windows/nanoserver:20H2
+    NODEJSVERSION: 14.15.3
 steps:
   - id: build-hello-world
     build: -t $Registry/$repo/hello-world:$ID -f Dockerfile .
