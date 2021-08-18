@@ -1,12 +1,7 @@
 version: v1.1.0
-
-# To run this: az acr run -f build-hello-world.yaml https://github.com/AzureCR/acr-tasks-sample.git
-
-
-
 alias:
   src:
-    - './env.yml'
+    - 'https://raw.githubusercontent.com/gillissm/acr-task-demo/main/env.yml'
 steps:
   - id: build-hello-world
     build: -t $Registry/$repo/hello-world -f hello-world.dockerfile ./subDirectory
