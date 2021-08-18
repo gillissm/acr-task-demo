@@ -6,9 +6,9 @@ alias:
     NODEJSVERSION: 14.15.3
 steps:
   - id: build-hello-world
-    build: -t $Registry/$repo/hello-world:$ID -f Dockerfile .
+    build: -t $Registry/repo/hello-world:$ID -f Dockerfile .
     env:
       - PARENT_IMAGE=$NODEJSPARENTIMAGE
       - NODEJS_VERSION=$NODEJSVERSION
   - id: push-hello-world
-    push: ["$Registry/$repo/hello-world:$ID"]
+    push: ["$Registry/repo/hello-world:$ID"]
