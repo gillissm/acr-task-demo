@@ -1,6 +1,8 @@
 version: v1.1.0
+alias:
+  values:
+    repo: fornode
 steps:
-  - build: -t $Registry/helloworld -f node.dockerfile .
-    env:
-      - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver
-      - NODEJS_VERSION=14.15.3
+  - build: -t $Registry/$repo/hello-node:$ID -f node.dockerfile . --build-arg PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver --build-arg NODEJS_VERSION=14.15.3
+  - push:
+    - $Registry/$repo/hello-node:$ID
