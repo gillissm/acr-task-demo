@@ -4,7 +4,7 @@ alias:
     - 'https://raw.githubusercontent.com/gillissm/acr-task-demo/main/env.yml'
 steps:
   - id: build-hello-world
-    build: -t $Registry/$repo/hello-world:$ID -f Dockerfile .
+    build: -t $Registry/sample-name/hello-world:$ID -f Dockerfile .
     env:
       - PARENT_IMAGE=$NODEJSPARENTIMAGE
       - NODEJS_VERSION=$NODEJSVERSION
