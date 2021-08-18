@@ -1,8 +1,7 @@
 version: v1.1.0
 steps:
   - id: build-hello-world
-    build: -t $Registry/sleeping-world -f node.dockerfile .
+    build: -t $Registry/helloworld -f node.dockerfile .
     env:
       - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver:20H2
       - NODEJS_VERSION=14.15.3
-
