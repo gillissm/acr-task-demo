@@ -3,5 +3,5 @@ steps:
   - id: build-hello-world
     build: -t $Registry/helloworld -f node.dockerfile .
     env:
-      - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver:20H2
+      - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver
       - NODEJS_VERSION=14.15.3
