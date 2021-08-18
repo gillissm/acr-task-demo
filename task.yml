@@ -1,7 +1,7 @@
 version: v1.1.0
 steps:
   - id: build-hello-world
-    build: -t $Registry/hello-world -f Dockerfile .
+    build: -t $Registry/sleeping-world:$ID -f Dockerfile .
     env:
       - PARENT_IMAGE=mcr.microsoft.com/windows/nanoserver
       - NODEJS_VERSION=14.15.3
