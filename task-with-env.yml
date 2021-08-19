@@ -3,6 +3,6 @@ alias:
   src:
     - env.yml
 steps:
-  - build: -t $Registry/$repo/hello-node:$TagId -f node.dockerfile . --build-arg PARENT_IMAGE=$NODEJSPARENTIMAGE --build-arg NODEJS_VERSION=$NODEJSVERSION
+  - build: -t $Registry/$repo/hello-node:$TagId -f node.dockerfile . --build-arg PARENT_IMAGE=$NODEJS_PARENT_IMAGE --build-arg NODEJS_VERSION=$NODEJSVERSION
   - push:
     - $Registry/$repo/hello-node:$TagId
